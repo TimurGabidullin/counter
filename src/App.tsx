@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Counter from "./Counter/Counter";
+
+export type StateType = {
+    count: number
+    maxValue: number
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [state, setState] = useState<StateType>({
+        count: 0,
+        maxValue: 5
+    })
+
+
+    const clickBtnInc = () => {
+        setState({...state, count: state.count + 1})
+        // if (state.count === state.maxValue) {
+        // }
+    }
+
+
+    const clickBtnReset = () => {
+        setState({...state, count: 0})
+    }
+
+
+    return (
+        <div className="App">
+            <Counter state={state}
+                     clickBtnInc={clickBtnInc}
+                     clickBtnReset={clickBtnReset}
+            />
+        </div>
+    );
 }
 
 export default App;
