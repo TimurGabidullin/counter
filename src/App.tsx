@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import Counter from "./Counter/Counter";
 import Setbar from "./Setbar/Setbar";
@@ -9,7 +9,6 @@ export type StateType = {
     isDisabledInc:boolean
     isDisabledRes:boolean
     message:string
-
 }
 
 export type SetValueType = {
@@ -19,8 +18,22 @@ export type SetValueType = {
 }
 
 
-
 function App() {
+
+
+    useEffect(() => {
+        let count = localStorage.getItem('count')
+        let maxValue = localStorage.getItem('maxValue')
+        if (count && maxValue) {
+            let newCount = JSON.parse(count)
+            let newMaxValue=JSON.parse(maxValue)
+            setState({...state, count: newCount,maxValue:newMaxValue})
+            setUpdatedValue({...updatedValue, updatedStartValue: newCount,updatedMaxValue:newMaxValue})
+        }
+
+    }, [])
+
+
 
     const [state, setState] = useState<StateType>({
         count: 0,
@@ -52,9 +65,11 @@ function App() {
             maxValue: updatedValue.updatedMaxValue,
             isDisabledInc: false,
             isDisabledRes: false,
-            message:''
+            message: ''
         })
         setUpdatedValue({...updatedValue, isDisabledSet: true})
+        localStorage.setItem('count', JSON.stringify(updatedValue.updatedStartValue))
+        localStorage.setItem('maxValue', JSON.stringify(updatedValue.updatedMaxValue))
     }
 
 

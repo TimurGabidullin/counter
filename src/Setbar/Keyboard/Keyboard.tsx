@@ -9,7 +9,7 @@ export type KeyboardPropsType = {
 }
 
 const Keyboard: React.FC<KeyboardPropsType> = ({clickBtnSet,isDisabledSet}) => {
-    
+
     const clickBtnSetHandler = () => {
         clickBtnSet()
     }

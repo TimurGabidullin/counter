@@ -28,13 +28,13 @@ const InputMenu: React.FC<DisplayPropsType> = (
 
     return (
         <div className={s.display}>
-            <div>max value
+            <div>max value:
                 <input type='number'
                        value={updatedMaxValue}
                        onChange={changeMaxValue}
                        className={updatedStartValue >= updatedMaxValue ? s.red : s.blue}/>
             </div>
-            <div>start value
+            <div>start value:
                 <input type='number'
                        value={updatedStartValue}
                        onChange={changeStartValue}
