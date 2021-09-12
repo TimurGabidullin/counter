@@ -20,6 +20,35 @@
   border: 2px solid darkturquoise;
   background-color: darkturquoise;
   border-radius: 5px;
+}
 
+.message{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px auto;
+  font-size: 20px;
+  text-align: center;
+  width: 280px;
+  height: 80px;
+  border: 2px solid darkturquoise;
+  background-color: darkturquoise;
+  border-radius: 5px;
+
+}
+
+.text{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px auto;
+  font-size: 30px;
+  color: red;
+  text-align: center;
+  width: 280px;
+  height: 80px;
+  border: 2px solid darkturquoise;
+  background-color: darkturquoise;
+  border-radius: 5px;
 
 }

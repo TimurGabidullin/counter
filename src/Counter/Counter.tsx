@@ -11,18 +11,20 @@ export type CounterPropsType = {
 }
 
 const Counter: React.FC<CounterPropsType> = (props) => {
-    const {count,maxValue} = props.state
+    const {count,maxValue,isDisabledRes,isDisabledInc,message} = props.state
     const {clickBtnInc, clickBtnReset} = props
 
     return (
         <div className={s.wrapper}>
             <Display count={count}
-                     maxValue={maxValue}/>
+                     maxValue={maxValue}
+                     message={message}/>
             <Keyboard count={count}
                       maxValue={maxValue}
                       clickBtnInc={clickBtnInc}
                       clickBtnReset={clickBtnReset}
-            />
+                      isDisabledRes={isDisabledRes}
+                      isDisabledInc={isDisabledInc}/>
         </div>
     );
 };

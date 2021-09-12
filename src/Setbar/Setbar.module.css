@@ -1,11 +1,11 @@
 
 .wrapper {
+  /*margin-left: 300px;*/
   width: 300px;
   height: auto;
   border: 2px solid darkturquoise;
   border-radius: 5px;
   /*display: inline-block;*/
-
 }
 
 

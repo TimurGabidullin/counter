@@ -1,18 +1,26 @@
 import React from 'react';
 import s from './Keyboard.module.css'
+import Button from "../../Button";
 
 
 export type KeyboardPropsType = {
     count: number
-    maxValue:number
+    maxValue: number
     clickBtnInc: () => void
     clickBtnReset: () => void
+    isDisabledRes: boolean
+    isDisabledInc: boolean
 }
 
-const Keyboard: React.FC<KeyboardPropsType> = ({ clickBtnInc, clickBtnReset,count,maxValue}) => {
-
-
-
+const Keyboard: React.FC<KeyboardPropsType> = (
+    {
+        clickBtnInc,
+        clickBtnReset,
+        count,
+        maxValue,
+        isDisabledRes,
+        isDisabledInc
+    }) => {
 
     const clickBtnIncHandler = () => {
         clickBtnInc()
@@ -25,8 +33,8 @@ const Keyboard: React.FC<KeyboardPropsType> = ({ clickBtnInc, clickBtnReset,coun
 
     return (
         <div className={s.keyboard}>
-            <button onClick={clickBtnIncHandler} disabled={count===maxValue}>inc</button>
-            <button onClick={clickBtnResetHandler} disabled={count===0} >reset</button>
+            <Button title={'inc'} isDisabled={isDisabledInc||count===maxValue} clickBtnHandler={clickBtnIncHandler}/>
+            <Button title={'reset'} isDisabled={isDisabledRes} clickBtnHandler={clickBtnResetHandler}/>
         </div>
     );
 };
