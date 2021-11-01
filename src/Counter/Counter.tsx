@@ -2,16 +2,17 @@ import React from 'react';
 import Display from "./Display/Display";
 import Keyboard from "./Keyboard/Keyboard";
 import s from './Counter.module.css'
-import {StateType} from "../App";
+
+import {AppStateType} from "../redux/store";
 
 export type CounterPropsType = {
-    state: StateType
+    state: AppStateType
     clickBtnInc: () => void
     clickBtnReset: () => void
 }
 
 const Counter: React.FC<CounterPropsType> = (props) => {
-    const {count,maxValue,isDisabledRes,isDisabledInc,message} = props.state
+    const {count,maxValue,isDisabledRes,isDisabledInc,message} = props.state.counter
     const {clickBtnInc, clickBtnReset} = props
 
     return (
