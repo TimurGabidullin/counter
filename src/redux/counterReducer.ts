@@ -1,6 +1,5 @@
 import {ActionType} from "./store";
 
-
 export const initialState = {
     count: 0,
     maxValue: 5,

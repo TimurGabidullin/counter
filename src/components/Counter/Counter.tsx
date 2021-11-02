@@ -3,7 +3,7 @@ import Display from "./Display/Display";
 import Keyboard from "./Keyboard/Keyboard";
 import s from './Counter.module.css'
 
-import {AppStateType} from "../redux/store";
+import {AppStateType} from "../../redux/store";
 
 export type CounterPropsType = {
     state: AppStateType

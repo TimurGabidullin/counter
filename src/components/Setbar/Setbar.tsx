@@ -2,7 +2,7 @@ import React from 'react';
 import InputMenu from "./InputMenu/InputMenu";
 import Keyboard from "./Keyboard/Keyboard";
 import s from './Setbar.module.css'
-import {AppStateType} from "../redux/store";
+import {AppStateType} from "../../redux/store";
 
 export type SetbarPropsType = {
     updatedValue: AppStateType

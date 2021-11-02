@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Keyboard.module.css'
-import Button from "../../Button";
+import Button from "../../../Button";
 
 
 export type KeyboardPropsType = {

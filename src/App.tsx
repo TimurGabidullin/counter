@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Counter from "./Counter/Counter";
-import Setbar from "./Setbar/Setbar";
+import Counter from "./components/Counter/Counter";
+import Setbar from "./components/Setbar/Setbar";
 import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "./redux/store";
 import {
