@@ -20,6 +20,7 @@ const Counter: React.FC<CounterPropsType> = (props) => {
             <Display count={count}
                      maxValue={maxValue}
                      message={message}/>
+
             <Keyboard count={count}
                       maxValue={maxValue}
                       clickBtnInc={clickBtnInc}

@@ -7,6 +7,7 @@ import {
     updateMaxValueAC,
     updateStartValueAC
 } from "./counterReducer";
+import {loadState, saveState} from "../utils/localStorage";
 
 
 const rootReducer = combineReducers({
@@ -22,5 +23,10 @@ export type ActionType = ReturnType<typeof clickBtnIncAC> |
 export type AppStateType = ReturnType<typeof rootReducer>
 export type AppStoreType = typeof store
 
+const persistedState = loadState();
 
-export const store = createStore(rootReducer)
+export const store = createStore(rootReducer, persistedState)
+
+store.subscribe(() => {
+    saveState()
+})

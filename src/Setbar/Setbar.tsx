@@ -2,7 +2,6 @@ import React from 'react';
 import InputMenu from "./InputMenu/InputMenu";
 import Keyboard from "./Keyboard/Keyboard";
 import s from './Setbar.module.css'
-import {SetValueType} from "../App";
 import {AppStateType} from "../redux/store";
 
 export type SetbarPropsType = {
@@ -27,6 +26,5 @@ const Setbar: React.FC<SetbarPropsType> = (props) => {
         </div>
     );
 };
-
 
 export default Setbar;

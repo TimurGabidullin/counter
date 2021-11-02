@@ -1,7 +1,7 @@
 import {ActionType} from "./store";
 
 
-const initialState = {
+export const initialState = {
     count: 0,
     maxValue: 5,
     isDisabledInc: false,
@@ -95,15 +95,4 @@ export const clickBtnSetAC = () => {
     return {
         type: 'CLICK_BTN_SET',
     } as const
-    // setState({
-    //     ...state,
-    //     count: updatedValue.updatedStartValue,
-    //     maxValue: updatedValue.updatedMaxValue,
-    //     isDisabledInc: false,
-    //     isDisabledRes: false,
-    //     message: ''
-    // })
-    // setUpdatedValue({...updatedValue, isDisabledSet: true})
-    // localStorage.setItem('count', JSON.stringify(updatedValue.updatedStartValue))
-    // localStorage.setItem('maxValue', JSON.stringify(updatedValue.updatedMaxValue))
 }
